@@ -61,7 +61,8 @@ Inserte a continuación una captura de pantalla que muestre el resultado de ejec
 
 Resultado al ejecutar el comando *verbosa*:
 
-![code](/C:/Users/franc/APA-T2/tests.png)
+![no consigo que inserte la imagen, está adjuntada en el repositorio de github por separado como 'tests.png', pido disculpas por las molestias](/C:/Users/franc/APA-T2/tests.png)
+
 
 #### Código desarrollado
 
