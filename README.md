@@ -61,7 +61,7 @@ Inserte a continuación una captura de pantalla que muestre el resultado de ejec
 
 Resultado al ejecutar el comando *verbosa*:
 
-![code](/imagenes/tests.png)
+![code](\C:\Users\franc\APA-T2\tests.png)
 
 #### Código desarrollado
 
