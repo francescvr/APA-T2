@@ -1,23 +1,17 @@
 """
 Francesc Valero Ruiz
 
-Modulo de gestión de numeros primos
-
-Exemples: 
->>> [ numero for numero in range(2, 50) if esPrimo(numero) ]
-[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-
->>> primos(50)
-(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47)
-
 """
 
 def esPrimo(numero):
     """
     Devuelve True si su argumento es primo, y False si no lo es.
+
+    >>> [ numero for numero in range(2, 50) if esPrimo(numero) ]
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
     """
 
-    for prova in range(2, numero):
+    for prova in range(2, int(numero ** 0.5 + 1)):
         if numero % prova == 0:
             return False
     
@@ -26,25 +20,41 @@ def esPrimo(numero):
 
 def primos(numero):
     """
-    Devuelve una tupla con todos los números primos menores que su argumento.    
+    Devuelve una tupla con todos los números primos menores que su argumento.
+    >>> primos(50)
+    (2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47)
     """
 
-    return tuple([prova for prova in range(2, numero) if esPrimo(numero)])
+    return tuple([prova for prova in range(2, numero) if esPrimo(prova)])
 
 def descompon(numero):
     """
     Devuelve una tupla con la descomposición en factores primos de su argumento
-    """
-    
-    return tuple([i for i in primos(numero) if numero % i ==0])
+    >>> descompon(36 * 175 * 143)
+    (2, 2, 3, 3, 5, 5, 7, 11, 13)
 
+    """
+    factores = []
+
+    for i in primos(numero):
+        while numero % i == 0:
+            factores.append(i)
+            numero //= i
+
+    
+    return tuple(factores)
+
+from collections import Counter as C  
+    
 
 def mcm(numero, numero2):
     """
     Devuelve el mínimo común múltiplo de sus argumentos.
+    >>> mcm(24, 4)
+    24
     """
-    numeroD = dict(descompon(numero))
-    numero2D = dict(descompon(numero2))
+    numeroD = C(descompon(numero))
+    numero2D = C(descompon(numero2))
 
 
     factoritzacion = numeroD | numero2D  
@@ -59,9 +69,11 @@ def mcm(numero, numero2):
 def mcd(numero, numero2):
     """
     Devuelve el máximo común divisor de sus argumentos.
+    >>> mcd(24, 4)
+    4
     """
-    numeroD = dict(descompon(numero))
-    numero2D = dict(descompon(numero2))
+    numeroD = C(descompon(numero))
+    numero2D = C(descompon(numero2))
 
 
     factoritzacion = numeroD & numero2D  
