@@ -172,7 +172,7 @@ def fact(*numeros):
 def mcmN(*numeros):
     """
     Devuelve el mínimo común múltiplo de los argumentos.
-    >>> mcm(42, 60, 70, 63)
+    >>> mcmN(42, 60, 70, 63)
     1260
     """
 
@@ -189,7 +189,7 @@ def mcmN(*numeros):
 def mcdN(*numeros):
     """
     Devuelve el máximo común divisor de los argumentos.
-    >>> mcd(840, 630, 1050, 1470)
+    >>> mcdN(840, 630, 1050, 1470)
     210
     """
 
