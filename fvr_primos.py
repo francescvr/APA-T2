@@ -169,7 +169,7 @@ def fact(*numeros):
     return diccionarios
 
 
-def mcm(*numeros):
+def mcmN(*numeros):
     """
     Devuelve el mínimo común múltiplo de los argumentos.
     >>> mcm(42, 60, 70, 63)
@@ -186,7 +186,7 @@ def mcm(*numeros):
     return mcm
 
 
-def mcd(*numeros):
+def mcdN(*numeros):
     """
     Devuelve el máximo común divisor de los argumentos.
     >>> mcd(840, 630, 1050, 1470)
